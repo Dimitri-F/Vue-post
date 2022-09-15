@@ -13,6 +13,20 @@ createApp({
             } else {
                 post.likes = 1
             }
+        },
+        addComment(event, post) {
+            const { value }  = event.target.elements[0];
+            const comment = {
+                id: post.comment ? post.comment.length : 1,
+                body: value
+            }
+
+            if(post.comments){
+                post.comments.push(comment)  
+            }else {
+                post.comments = [comment]
+            }
+            
         }
     },
     mounted() {

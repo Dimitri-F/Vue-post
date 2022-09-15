@@ -29,6 +29,16 @@
                                 Like{{ post.likes && post.likes > 1 ? "s" : "" }}
                             </span>
                         </div>
+                        <div class="comments">
+                            <form v-on:submit.prevent="(e) => addComment(e, post)">
+                                <input type="text">
+                            </form>
+                            <div class="commentsList">
+                                <div class="comment" v-for="comment in post.comments" :key="post.id">
+                                    {{ comment.body }}
+                                </div> 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

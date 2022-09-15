@@ -43,7 +43,33 @@ body {
             padding: 0.5rem 2rem;
             cursor: pointer;
             border-radius: 2px;
+
+            &:hover {
+                background: linear-gradient(45deg, #ff6036, #fd267a);
+            }
+        }
+    }
+
+    .comments {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+
+        form {
+            width: 100%;
         }
 
+        input {
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            width: 100%;
+            padding: .5rem;
+        }
+
+        .commentsList {
+            margin-top: 1rem;
+        }
     }
 }
