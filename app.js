@@ -6,6 +6,15 @@ createApp({
             postsList: []
         }
     },
+    methods: {
+        addLike(post) {
+            if(post.likes) {
+                post.likes++
+            } else {
+                post.likes = 1
+            }
+        }
+    },
     mounted() {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
