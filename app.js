@@ -3,11 +3,13 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            //on initialise un tableau vide qui va contenir nos posts
             postsList: []
         }
     },
     methods: {
-        addLike(post) {
+        //fonction qui ajoute les likes à nos post
+        addLikePost(post) {
             if(post.likes) {
                 post.likes++
             } else {
@@ -27,9 +29,18 @@ createApp({
                 post.comments = [comment]
             }
             
-        }
+        },
+        addLikeCom(comment) {
+
+            if (comment.likes) {
+                comment.likes++
+            } else {
+                comment.likes = 1
+            }
+        },
     },
     mounted() {
+        //on récupère les données des posts d'une API 
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
             .then(data => this.postsList.push(...data))
