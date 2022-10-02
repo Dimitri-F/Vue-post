@@ -1,3 +1,4 @@
+
 const { createApp } = Vue
 
 createApp({
@@ -46,3 +47,4 @@ createApp({
             .then(data => this.postsList.push(...data))
     }
 }).mount('#app')
+

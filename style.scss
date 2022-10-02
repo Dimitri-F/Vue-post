@@ -9,14 +9,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
+ul {
+    list-style-type: none;
 }
 
-.col {
-    width: calc(100% / 4);
-    padding: 10px;
+
+h3 {
+    background: linear-gradient(45deg, #fd267a, #ff6036);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 10vh;
+    padding: 1rem;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.card-container {
+    margin: 1rem;
 }
 
 .card {
@@ -24,12 +36,29 @@ body {
     border-radius: 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
+    .card-header {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .card-img {
+        width: 60vh;
+        height: auto;
+        padding: 1rem;
+        border-radius: 2px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    }
+
     img {
         width: 100%;
     }
 
     .card-body {
         padding: 1rem;
+        width: 50%;
+        border-radius: 2px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     }
 
     .card-title {
@@ -54,10 +83,17 @@ body {
             padding: 0.5rem 2rem;
             cursor: pointer;
             border-radius: 2px;
+            height: 35px;
 
             &:hover {
                 background: linear-gradient(45deg, #ff6036, #fd267a);
             }
+        }
+
+        span {
+            padding: 1rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
         }
     }
 }
@@ -89,6 +125,18 @@ body {
     }
 
     .comment {
+        position: relative;
+        margin: 1rem;
+    
+
+        span {
+            position: absolute;
+            right: 10px;
+            margin: 1rem;
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        
         hr {
             margin: 1rem;
         }
@@ -112,5 +160,24 @@ body {
             }
         }
     }
+}
+
+.list-move,
+/* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+    transition: all 1s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+    position: absolute;
 }
 
