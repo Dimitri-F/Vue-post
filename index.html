@@ -30,7 +30,9 @@
                         </div>
                         
                         <div class="card-footer">
-                            <button id="postbutton" v-on:click="addLikePost(post)">Like</button>
+                            <button class="postbutton" v-on:click="addLikePost(post)">
+                                Like
+                            </button>
                             <span id="spanLike">{{ post.likes ? post.likes : "0" }}
                                 Like{{ post.likes && post.likes > 1 ? "s" : "" }}
                             </span>
@@ -65,8 +67,10 @@
         </section>
     </div>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
+    
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./app.js"></script>
     <script src="./animation.js" defer></script>
 </body>

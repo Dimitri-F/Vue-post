@@ -1,7 +1,7 @@
-window.onload = function () {   
+window.onload = () => {   
     
-    const postButton = document.querySelector("#postButton");
-    const spanLike = document.querySelector("#spanLike")
+    const postButton = document.getElementsByClassName("postButton");
+    const spanLike = document.getElementById("spanLike")
 
     const buttonSpinning = [
         { transform: 'rotate(0) scale(1)' },
@@ -22,8 +22,12 @@ window.onload = function () {
         iterations: 1,
     }
 
+    
     postButton.addEventListener('click', () => {
-        postButton.animate(buttonSpinning, buttonTiming);
-        spanLike.animate(scaleTransform, scaleTiming)
+    console.log("ca marche");
+    postButton.animate(buttonSpinning, buttonTiming);
+    spanLike.animate(scaleTransform, scaleTiming)
     });
+  
+    
  }

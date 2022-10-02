@@ -15,11 +15,12 @@ ul {
 
 h3 {
   background: linear-gradient(45deg, #fd267a, #ff6036);
+  width: 30%;
   color: white;
   text-align: center;
   text-transform: uppercase;
   font-size: 2rem;
-  margin: 10vh;
+  margin: 10vh auto;
   padding: 1rem;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -36,6 +37,7 @@ h3 {
 }
 .card .card-header {
   display: flex;
+  flex: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -45,6 +47,7 @@ h3 {
   padding: 1rem;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
 }
 .card img {
   width: 100%;
@@ -52,8 +55,6 @@ h3 {
 .card .card-body {
   padding: 1rem;
   width: 50%;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .card .card-title {
   margin-bottom: 1rem;
@@ -75,13 +76,14 @@ h3 {
   padding: 0.5rem 2rem;
   cursor: pointer;
   border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 35px;
 }
 .card .card-footer button:hover {
   background: linear-gradient(45deg, #ff6036, #fd267a);
 }
 .card .card-footer span {
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
