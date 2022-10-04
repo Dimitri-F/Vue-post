@@ -1,86 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue post</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./app.js" defer></script>
 </head>
-<body>
 
+<body>
     <div id="app">
-        
         <section>
-            
-             <h3 class="animate__animated animate__bounce">Post</h3>
-                       
-            <button class="showButton">
+            <h3>Post</h3>
+            <button @click="show" class="showButton">
                 See posts
             </button>
             <transition-group name="list">
-                <div class="card-container" v-for="post in postsList" :key="post.id">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-img">
-                                <img src="https://picsum.photos/200" alt="">
+                <div v-if="isActive === true">
+                    <div class="card-container" v-for="post in postsList" :key="post.id">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-img">
+                                    <img src="https://picsum.photos/200" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{post.title}}
+                                    </h5>
+                                    <p class="card-txt">{{post.body}}</p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    {{post.title}}
-                                </h5>
-                                <p class="card-txt">{{post.body}}</p>
+
+                            <div class="card-footer">
+                                <button class="postbutton" v-on:click="addLikePost(post)">
+                                    Like
+                                </button>
+                                <span class="spanLike">{{ post.likes ? post.likes : "0" }}
+                                    Like{{ post.likes && post.likes > 1 ? "s" : "" }}
+                                </span>
                             </div>
-                        </div>
+                            <div class="comments-container">
+                                <form v-on:submit.prevent="(e) => addComment(e, post)">
+                                    <input type="text" placeholder="Type your comment and press ENTER">
+                                </form>
 
-                        <div class="card-footer">
-                            <button class="postbutton" v-on:click="addLikePost(post)">
-                                Like
-                            </button>
-                            <span class="spanLike">{{ post.likes ? post.likes : "0" }}
-                                Like{{ post.likes && post.likes > 1 ? "s" : "" }}
-                            </span>
-                        </div>
-                        <div class="comments-container">
-                            <form v-on:submit.prevent="(e) => addComment(e, post)">
-                                <input type="text" placeholder="Type your comment and press ENTER">
-                            </form>
-
-                            <div class="comments-list">
-                                <transition-group name="list">
-                                    <div class="comment" v-for="comment in post.comments" :key="post.id">
-                                        {{ comment.body }}
-                                        <div class="comment-like">
-                                            <button id="comButton" v-on:click="addLikeCom(comment)"> 👍
-                                                {{ comment.likes ? comment.likes : "0" }}
-                                                Like{{ comment.likes && comment.likes > 1 ? "s" : "" }}
-                                            </button>
+                                <div class="comments-list">
+                                    <transition-group name="list">
+                                        <div class="comment" v-for="comment in post.comments" :key="post.id">
+                                            {{ comment.body }}
+                                            <div class="comment-like">
+                                                <button id="comButton" v-on:click="addLikeCom(comment)"> 👍
+                                                    {{ comment.likes ? comment.likes : "0" }}
+                                                    Like{{ comment.likes && comment.likes > 1 ? "s" : "" }}
+                                                </button>
+                                            </div>
+                                            <hr>
                                         </div>
-                                        <hr>
-
-                                    </div>
-
-                                </transition-group>
+                                    </transition-group>
+                                </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
             </transition-group>
-
-                
-            
         </section>
     </div>
-
-    
-    
-    
-   
 </body>
 
 </html>

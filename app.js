@@ -1,15 +1,21 @@
-
-
 const { createApp } = Vue
 
 createApp({
     data() {
         return {
             //on initialise un tableau vide qui va contenir nos posts
-            postsList: []
+            postsList: [],
+            isActive: false,
         }
     },
     methods: {
+        show() {
+            if (this.isActive === false){
+                this.isActive = true;
+            }else{
+                this.isActive === false;
+            }
+        },
         //fonction qui ajoute les likes à nos post
         addLikePost(post) {
             if(post.likes) {
@@ -30,7 +36,6 @@ createApp({
             }else {
                 post.comments = [comment]
             }
-            
         },
         addLikeCom(comment) {
 
