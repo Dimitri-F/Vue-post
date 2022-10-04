@@ -12,8 +12,14 @@
 <body>
 
     <div id="app">
+        
         <section>
-            <h3>Post</h3>
+            
+             <h3 class="animate__animated animate__bounce">Post</h3>
+                       
+            <button class="showButton">
+                See posts
+            </button>
             <transition-group name="list">
                 <div class="card-container" v-for="post in postsList" :key="post.id">
                     <div class="card">

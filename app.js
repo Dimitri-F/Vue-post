@@ -1,4 +1,5 @@
 
+
 const { createApp } = Vue
 
 createApp({
@@ -44,7 +45,8 @@ createApp({
         //on récupère les données des posts d'une API 
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
-            .then(data => this.postsList.push(...data))
+            .then(data => this.postsList.push(...data));   
     }
 }).mount('#app')
+
 
