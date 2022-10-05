@@ -9,14 +9,15 @@ createApp({
         }
     },
     methods: {
+        //fonction qui affiche les posts
         show() {
             if (this.isActive === false){
                 this.isActive = true;
             }else{
-                this.isActive === false;
+                this.isActive = false;
             }
         },
-        //fonction qui ajoute les likes à nos post
+        //fonction qui ajoute les likes à nos posts
         addLikePost(post) {
             if(post.likes) {
                 post.likes++
@@ -24,6 +25,7 @@ createApp({
                 post.likes = 1
             }
         },
+        //fonction qui ajoute les commentaires à nos posts
         addComment(event, post) {
             const { value }  = event.target.elements[0];
             const comment = {
@@ -37,8 +39,8 @@ createApp({
                 post.comments = [comment]
             }
         },
+        //fonction qui ajoute les likes à nos commentaires
         addLikeCom(comment) {
-
             if (comment.likes) {
                 comment.likes++
             } else {

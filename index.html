@@ -38,7 +38,7 @@
                                 <button class="postbutton" v-on:click="addLikePost(post)">
                                     Like
                                 </button>
-                                <span class="spanLike">{{ post.likes ? post.likes : "0" }}
+                                <span id="spanLike">{{ post.likes ? post.likes : "0" }}
                                     Like{{ post.likes && post.likes > 1 ? "s" : "" }}
                                 </span>
                             </div>

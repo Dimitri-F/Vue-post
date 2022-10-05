@@ -1,11 +1,24 @@
+@charset "UTF-8";
+/* Import fichier scss */ /* couleur */
+/* variables pour style spécifique */
+/* css base pour elt button */
+.comment-like button, .card-footer button, .showButton {
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* style général */
 body {
-  background-color: #ffffff;
+  background-color: #fff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -17,6 +30,7 @@ ul {
   list-style-type: none;
 }
 
+/* style spécifique */
 h3 {
   background: linear-gradient(45deg, #fd267a, #ff6036);
   width: 30%;
@@ -32,6 +46,7 @@ h3 {
           animation: rotation 0.8s ease-out 1s;
 }
 
+/* animation titre */
 @-webkit-keyframes rotation {
   from {
     opacity: 0;
@@ -42,7 +57,6 @@ h3 {
     transform: rotate(0deg);
   }
 }
-
 @keyframes rotation {
   from {
     opacity: 0;
@@ -55,31 +69,28 @@ h3 {
 }
 .showButton {
   height: 60px;
-  border: none;
+  padding: 0.5rem 2rem;
   background-color: #ff6036;
   margin-bottom: 2rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  color: white;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
-  border-radius: 2px;
+  text-transform: uppercase;
   box-shadow: 0 0 0 0 #ff6036;
   -webkit-animation: pulse 1.3s infinite;
           animation: pulse 1.3s infinite;
 }
 
+/* animation bouton */
 @-webkit-keyframes pulse {
   to {
     box-shadow: 0 0 0 18px rgba(255, 96, 54, 0.01);
   }
 }
-
 @keyframes pulse {
   to {
     box-shadow: 0 0 0 18px rgba(255, 96, 54, 0.01);
   }
 }
+/* style post */
 .card-container {
   margin: 1rem;
 }
@@ -130,14 +141,11 @@ h3 {
   padding: 1rem;
 }
 .card-footer button {
-  border: none;
-  background: linear-gradient(45deg, #fd267a, #ff6036);
-  color: white;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 35px;
+  background: linear-gradient(45deg, #fd267a, #ff6036);
+  padding: 0.5rem 2rem;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .card-footer button:hover {
   background: linear-gradient(45deg, #ff6036, #fd267a);
@@ -148,6 +156,7 @@ h3 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* style partie "taper commentaire" */
 .comments-container {
   display: flex;
   justify-content: center;
@@ -165,6 +174,7 @@ h3 {
   padding: 0.5rem;
 }
 
+/* style affichage commentaire */
 .comments-list {
   width: 100%;
   display: flex;
@@ -174,38 +184,26 @@ h3 {
 }
 
 .comment {
-  position: relative;
-  margin: 1rem;
-}
-.comment span {
-  position: absolute;
-  right: 10px;
-  margin: 1rem;
-  border: 1px solid black;
-  padding: 1rem;
+  margin-top: 1rem;
 }
 .comment hr {
-  margin: 1rem;
+  width: 100%;
+  margin: 1rem auto;
 }
 
 .comment-like {
-  text-align: none;
-  display: flex;
-  justify-content: space-between;
+  text-align: right;
   margin-top: 0.5rem;
 }
 .comment-like button {
-  border: none;
   background: linear-gradient(45deg, #fd267a, #ff6036);
-  color: white;
   padding: 0.2rem 1rem;
-  cursor: pointer;
-  border-radius: 2px;
 }
 .comment-like button:hover {
   background: linear-gradient(45deg, #ff6036, #fd267a);
 }
 
+/* Animation apparition listes (post et commentaires) */
 .list-move,
 .list-enter-active,
 .list-leave-active {
